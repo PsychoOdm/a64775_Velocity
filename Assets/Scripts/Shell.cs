@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shell : MonoBehaviour
 {
     public GameObject explosion;
-    float speed = 3f;
+    float speed = 30f;
     float mass = 10;
     float force = 1000;
     float acceleration;
@@ -23,14 +23,14 @@ public class Shell : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
- 
+        acceleration = force / mass;
+        speed += acceleration * Time.deltaTime;
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        acceleration = force / mass;
-        speed += acceleration * Time.deltaTime;
-        this.transform.Translate(0, 0, Time.deltaTime);
+        
+        this.transform.Translate(0, 0, speed * Time.deltaTime);
     }
 }
