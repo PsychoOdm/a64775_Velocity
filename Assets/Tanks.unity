@@ -119,12 +119,48 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &416431500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 416431501}
+  m_Layer: 0
+  m_Name: turret
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &416431501
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416431500}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.13052624, y: 0, z: 0, w: 0.9914449}
+  m_LocalPosition: {x: 0.04299998, y: 0.485, z: 1.1269999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1666085644}
+  m_LocalEulerAnglesHint: {x: -15, y: 0, z: 0}
 --- !u!1 &595956566 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2182668876329722018, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
   m_PrefabInstance: {fileID: 1354003426666338538}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &595956567
+--- !u!4 &595956568 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2887154942990734001, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
+  m_PrefabInstance: {fileID: 1354003426666338538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &595956569
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,15 +171,10 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05e4646ad6f42f342beb2a5fd1ebd716, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FileShell
+  m_EditorClassIdentifier: Assembly-CSharp::FireShell
   bullet: {fileID: 4824429324359416470, guid: 309a9737efb492b48a4f60d8b13ef43a, type: 3}
   turret: {fileID: 1103490604}
   enemy: {fileID: 620903246}
---- !u!4 &595956568 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2887154942990734001, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
-  m_PrefabInstance: {fileID: 1354003426666338538}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &620903246 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1043457633746962670, guid: f8df63ccbdfa54d54833de3ea7e2ce5a, type: 3}
@@ -163,6 +194,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   rotationSpeed: 100
+  transGun: {fileID: 1666085644}
+  gun: {fileID: 416431501}
+  bulletObj: {fileID: 4824429324359416470, guid: 309a9737efb492b48a4f60d8b13ef43a, type: 3}
 --- !u!65 &620903249
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -585,12 +619,17 @@ Transform:
   m_GameObject: {fileID: 1103490604}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.52, z: 1.39}
+  m_LocalPosition: {x: 0, y: 1.61, z: 1.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 595956568}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1666085644 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5714334409709048953, guid: f8df63ccbdfa54d54833de3ea7e2ce5a, type: 3}
+  m_PrefabInstance: {fileID: 3052892970279238296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1354003426666338538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -656,7 +695,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2182668876329722018, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 595956567}
+      addedObject: {fileID: 595956569}
   m_SourcePrefab: {fileID: 100100000, guid: e57a33c6f3b0e4cb2a2af014c265b239, type: 3}
 --- !u!1001 &3052892970279238296
 PrefabInstance:
@@ -736,7 +775,10 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 779faaa7659374a07984d4f51f044a29, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5714334409709048953, guid: f8df63ccbdfa54d54833de3ea7e2ce5a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 416431501}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1043457633746962670, guid: f8df63ccbdfa54d54833de3ea7e2ce5a, type: 3}
       insertIndex: -1
